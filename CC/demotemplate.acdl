@@ -6,7 +6,7 @@
         <value>'false'</value>
     </property>
     <property name="universal-messaging-umserver.um-jndi-cf-cf.url" many="false" isSecure="false" displayName="universal-messaging-umserver.um-jndi-cf-cf.url">
-        <value>nsp://localhost:9002</value>
+        <value>nsp://localhost:9000</value>
     </property>
     <property name="universal-messaging-umserver.um-jndi-dest-t1.autocreatedest" many="false" isSecure="false" displayName="universal-messaging-umserver.um-jndi-dest-t1.autocreatedest">
         <value>'false'</value>
