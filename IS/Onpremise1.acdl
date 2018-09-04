@@ -1,0 +1,232 @@
+<asset_composite xmlns="http://namespaces.softwareag.com/acdl/1.0" targetNamespace="http://namespaces.softwareag.com/webMethods/IS" name="Onpremise1" runtimeVersion="10.3.0.0">
+  <implementation.generic type="ispackage" />
+  <buildInfo name="BuildVersion" value="10.3.0.0.1536043864029" />
+  <buildInfo name="BuildTimestamp" value="2018-09-04T12:21:04" />
+  <buildInfo name="MinimumTargetRuntimeVersion" value="10.3.0.0" />
+  <property name="activatePkgOnInstall" displayName="Activate Package On Install">
+    <value>true</value>
+  </property>
+  <property name="archivePkgOnInstall" displayName="Archive Package On Install">
+    <value>true</value>
+  </property>
+  <property name="compilePackage" displayName="Compile Package On Install">
+    <value>true</value>
+  </property>
+  <property name="fragPackage" displayName="Fragment Package On Install">
+    <value>true</value>
+  </property>
+  <property name="clearACLs" displayName="Delete ACLs for the assets from the target Integration Server">
+    <value>false</value>
+  </property>
+  <property name="disallowActivePackageInstall" displayName="disallowActivePackageInstall">
+    <value>false</value>
+  </property>
+  <property name="packageExecutionCheck" displayName="packageExecutionCheck">
+    <value>0</value>
+  </property>
+  <property name="suspendTriggersDuringDeploy" displayName="Suspend Triggers During Deployment">
+    <value>false</value>
+  </property>
+  <property name="syncDocTypesToBroker" displayName="Synchronize Document Types To Broker During Deployment">
+    <value>true</value>
+  </property>
+  <asset name="ISPackage.Onpremise1" displayName="Onpremise1">
+    <implementation.generic type="ispackage" />
+  </asset>
+  <asset name="acmeSupport.partner.receiveXMLString" displayName="acmeSupport.partner:receiveXMLString">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.partner.receiveXMLNode" displayName="acmeSupport.partner:receiveXMLNode">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.utils.endTiming" displayName="acmeSupport.codeExample.codeSvc.utils:endTiming">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:Onpremise1.code.source.acmeSupport.codeExample.codeSvc.utils.java</dependsOn>
+    <dependsOn>IS:Onpremise1.code.classes.acmeSupport.codeExample.codeSvc.utils.class</dependsOn>
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.utils.startTiming</dependsOn>
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.utils.setInputs" displayName="acmeSupport.codeExample.codeSvc.utils:setInputs">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:advTrainingIS.codeSvc.docs.PartsRequest</dependsOn>
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.utils.startTiming" displayName="acmeSupport.codeExample.codeSvc.utils:startTiming">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:Onpremise1.code.source.acmeSupport.codeExample.codeSvc.utils.java</dependsOn>
+    <dependsOn>IS:Onpremise1.code.classes.acmeSupport.codeExample.codeSvc.utils.class</dependsOn>
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.utils.endTiming</dependsOn>
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.utils.slowLoopMapper" displayName="acmeSupport.codeExample.codeSvc.utils:slowLoopMapper">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.docs.PartsConfirmation" displayName="acmeSupport.codeExample.codeSvc.docs:PartsConfirmation">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.docs.PartsRequest" displayName="acmeSupport.codeExample.codeSvc.docs:PartsRequest">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.Flow_Service_1" displayName="acmeSupport.codeExample.codeSvc:Flow_Service_1">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.codeExample.codeSvc.mappingService" displayName="acmeSupport.codeExample.codeSvc:mappingService">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.docs.PartsConfirmation</dependsOn>
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.utils.setInputs</dependsOn>
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.utils.startTiming</dependsOn>
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.utils.slowLoopMapper</dependsOn>
+    <dependsOn>IS:acmeSupport.codeExample.codeSvc.utils.endTiming</dependsOn>
+  </asset>
+  <asset name="acmeSupport.process.processErrorHandler" displayName="acmeSupport.process:processErrorHandler">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.docs.TestShipNotice" displayName="acmeSupport.docs:TestShipNotice">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.docs.TestValidation" displayName="acmeSupport.docs:TestValidation">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.docs.OrderAccept" displayName="acmeSupport.docs:OrderAccept">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:acmeSupport.docs.docType_PartnerRoleDescription</dependsOn>
+  </asset>
+  <asset name="acmeSupport.docs.TestDBinfo" displayName="acmeSupport.docs:TestDBinfo">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.docs.TestOrderRequest" displayName="acmeSupport.docs:TestOrderRequest">
+    <implementation.generic type="isdocumenttype" />
+    <dependsOn>IS:acme.purchaseOrder.docs.docType_PartnerRoleDescription</dependsOn>
+    <dependsOn>IS:acmeSupport.docs.docType_PartnerRoleDescription</dependsOn>
+  </asset>
+  <asset name="acmeSupport.docs.schema_TestOrderAccept" displayName="acmeSupport.docs:schema_TestOrderAccept">
+    <implementation.generic type="isschema" />
+  </asset>
+  <asset name="acmeSupport.docs.CreditReport" displayName="acmeSupport.docs:CreditReport">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.docs.docType_PartnerRoleDescription" displayName="acmeSupport.docs:docType_PartnerRoleDescription">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.docs.Department" displayName="acmeSupport.docs:Department">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.docs.TestOrderCanonical" displayName="acmeSupport.docs:TestOrderCanonical">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.examples.sendHTTP" displayName="acmeSupport.examples:sendHTTP">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.examples.InsertNotificationPublishDocument" displayName="acmeSupport.examples:InsertNotificationPublishDocument">
+    <implementation.generic type="isdocumenttype" />
+  </asset>
+  <asset name="acmeSupport.examples.setPrices" displayName="acmeSupport.examples:setPrices">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.docs.TestShipNotice</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.InsertNotifyHandler" displayName="acmeSupport.examples:InsertNotifyHandler">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.examples.InsertNotificationPublishDocument</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.testInspectLineItems" displayName="acmeSupport.examples:testInspectLineItems">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.docs.TestOrderRequest</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.demoService" displayName="acmeSupport.examples:demoService">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.examples.div_numbers" displayName="acmeSupport.examples:div_numbers">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.examples.testMapping" displayName="acmeSupport.examples:testMapping">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.docs.TestOrderRequest</dependsOn>
+    <dependsOn>IS:acmeSupport.docs.TestOrderCanonical</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.mapNotifierDocToOrderAccept" displayName="acmeSupport.examples:mapNotifierDocToOrderAccept">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.docs.TestDBinfo</dependsOn>
+    <dependsOn>IS:acmeSupport.docs.OrderAccept</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.DynamicSQL" displayName="acmeSupport.examples:DynamicSQL">
+    <implementation.generic type="artservice" />
+    <dependsOn>IS:acmeSupport.adapters.acmeAdapter</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.TestSelect" displayName="acmeSupport.examples:TestSelect">
+    <implementation.generic type="artservice" />
+    <dependsOn>IS:acmeSupport.adapters.acmeAdapter</dependsOn>
+  </asset>
+  <asset name="acmeSupport.examples.CustomSQL" displayName="acmeSupport.examples:CustomSQL">
+    <implementation.generic type="artservice" />
+    <dependsOn>IS:acmeSupport.adapters.acmeAdapter</dependsOn>
+  </asset>
+  <asset name="acmeSupport.adapters.generateConnectionInput" displayName="acmeSupport.adapters:generateConnectionInput">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:Onpremise1.code.source.acmeSupport.adapters.java</dependsOn>
+    <dependsOn>IS:Onpremise1.code.classes.acmeSupport.adapters.class</dependsOn>
+    <dependsOn>IS:acmeSupport.adapters.loadConnectionProperties</dependsOn>
+  </asset>
+  <asset name="acmeSupport.adapters.DeleteConnection" displayName="acmeSupport.adapters:DeleteConnection">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="acmeSupport.adapters.loadConnectionProperties" displayName="acmeSupport.adapters:loadConnectionProperties">
+    <implementation.generic type="isjavaservice" />
+    <dependsOn>IS:Onpremise1.code.source.acmeSupport.adapters.java</dependsOn>
+    <dependsOn>IS:Onpremise1.code.classes.acmeSupport.adapters.class</dependsOn>
+    <dependsOn>IS:acmeSupport.adapters.generateConnectionInput</dependsOn>
+  </asset>
+  <asset name="acmeSupport.adapters.CreateConnection" displayName="acmeSupport.adapters:CreateConnection">
+    <implementation.generic type="isflowservice" />
+    <dependsOn>IS:acmeSupport.adapters.loadConnectionProperties</dependsOn>
+    <dependsOn>IS:acmeSupport.adapters.generateConnectionInput</dependsOn>
+  </asset>
+  <asset name="acmeSupport.adapters.enable" displayName="acmeSupport.adapters:enable">
+    <implementation.generic type="isflowservice" />
+  </asset>
+  <asset name="Onpremise1.code" displayName="code">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.code.classes" displayName="code/classes">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.code.classes.AcmeSupport.adapters.class" displayName="code/classes/AcmeSupport/adapters.class">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="Onpremise1.code.classes.AcmeSupport.codeExample.codeSvc.utils.class" displayName="code/classes/AcmeSupport/codeExample/codeSvc/utils.class">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="Onpremise1.code.jars" displayName="code/jars">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.code.source" displayName="code/source">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.code.source.acmeSupport.adapters.java" displayName="code/source/acmeSupport/adapters.java">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="Onpremise1.code.source.acmeSupport.codeExample.codeSvc.utils.java" displayName="code/source/acmeSupport/codeExample/codeSvc/utils.java">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="Onpremise1.config" displayName="config">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.config.JDBCAutomationAc.properties" displayName="config/JDBCAutomationAc.properties">
+    <implementation.generic type="isfile" />
+  </asset>
+  <asset name="Onpremise1.doc" displayName="doc">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.lib" displayName="lib">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.pub" displayName="pub">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.resources" displayName="resources">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.templates" displayName="templates">
+    <implementation.generic type="isfolder" />
+  </asset>
+  <asset name="Onpremise1.web" displayName="web">
+    <implementation.generic type="isfolder" />
+  </asset>
+</asset_composite>
+
